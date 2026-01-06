@@ -18,12 +18,28 @@ navLinks.forEach(link => {
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect and parallax (combined and throttled)
+let scrollTimeout;
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            const scrolled = window.scrollY;
+            
+            // Navbar scroll effect
+            if (scrolled > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Parallax effect for hero section
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+            
+            scrollTimeout = null;
+        }, 10);
     }
 });
 
@@ -48,22 +64,30 @@ const testimonialTrack = document.getElementById('testimonialTrack');
 const testimonials = document.querySelectorAll('.testimonial-card');
 
 function updateTestimonialSlider() {
-    const offset = -currentTestimonial * 100;
-    testimonialTrack.style.transform = `translateX(${offset}%)`;
+    if (testimonialTrack && testimonials.length > 0) {
+        const offset = -currentTestimonial * 100;
+        testimonialTrack.style.transform = `translateX(${offset}%)`;
+    }
 }
 
 function nextTestimonial() {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    updateTestimonialSlider();
+    if (testimonials.length > 0) {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonialSlider();
+    }
 }
 
 function previousTestimonial() {
-    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-    updateTestimonialSlider();
+    if (testimonials.length > 0) {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        updateTestimonialSlider();
+    }
 }
 
-// Auto-advance testimonials
-setInterval(nextTestimonial, 5000);
+// Auto-advance testimonials only if elements exist
+if (testimonialTrack && testimonials.length > 0) {
+    setInterval(nextTestimonial, 5000);
+}
 
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
@@ -287,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Loading animation
 window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+    // Page loaded - can add loading animations here if needed
 });
 
 // Performance optimization - Lazy loading for images
@@ -314,16 +338,7 @@ if ('IntersectionObserver' in window) {
 const currentYear = new Date().getFullYear();
 const footerYear = document.querySelector('.footer-bottom p');
 if (footerYear) {
-    footerYear.innerHTML = footerYear.innerHTML.replace('2026', currentYear);
+    footerYear.innerHTML = footerYear.innerHTML.replace('YEAR', currentYear);
 }
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-    }
-});
 
 console.log('Luxe Voyages website loaded successfully!');
