@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luxe Voyages - Your gateway to extraordinary luxury travel experiences around the world">
+    <title>Luxe Voyages - Luxury Travel Experiences</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>LUXE VOYAGES</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                    <li><a href="#experiences" class="nav-link">Experiences</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Extraordinary Journeys</h1>
+            <p class="hero-subtitle">Curated luxury experiences for the discerning traveler</p>
+            <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Destinations</h2>
+                <p class="section-subtitle">Handpicked locations for unforgettable experiences</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800');">
+                        <div class="destination-badge">Popular</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Santorini, Greece</h3>
+                        <p>Experience the magic of whitewashed villages and stunning sunsets over the Aegean Sea.</p>
+                        <div class="destination-meta">
+                            <span class="duration">7 Days</span>
+                            <span class="price">From $4,500</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openDestinationModal('Santorini, Greece')">Learn More</button>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800');">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Maldives</h3>
+                        <p>Indulge in paradise with overwater bungalows and pristine turquoise waters.</p>
+                        <div class="destination-meta">
+                            <span class="duration">5 Days</span>
+                            <span class="price">From $6,200</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openDestinationModal('Maldives')">Learn More</button>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800');">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Tokyo, Japan</h3>
+                        <p>Immerse yourself in the perfect blend of ancient traditions and modern innovation.</p>
+                        <div class="destination-meta">
+                            <span class="duration">10 Days</span>
+                            <span class="price">From $5,800</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openDestinationModal('Tokyo, Japan')">Learn More</button>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800');">
+                        <div class="destination-badge">New</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Amalfi Coast, Italy</h3>
+                        <p>Explore dramatic coastal cliffs, charming villages, and world-class cuisine.</p>
+                        <div class="destination-meta">
+                            <span class="duration">8 Days</span>
+                            <span class="price">From $5,200</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openDestinationModal('Amalfi Coast, Italy')">Learn More</button>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1549144511-f099e773c147?w=800');">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Discover spiritual serenity, lush rice terraces, and luxurious beach resorts.</p>
+                        <div class="destination-meta">
+                            <span class="duration">9 Days</span>
+                            <span class="price">From $4,100</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openDestinationModal('Bali, Indonesia')">Learn More</button>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800');">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Dubai, UAE</h3>
+                        <p>Experience opulence and luxury in this modern desert oasis of innovation.</p>
+                        <div class="destination-meta">
+                            <span class="duration">6 Days</span>
+                            <span class="price">From $5,500</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="openDestinationModal('Dubai, UAE')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Experiences -->
+    <section id="experiences" class="experiences">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Luxury Experiences</h2>
+                <p class="section-subtitle">Bespoke services tailored to your desires</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card">
+                    <div class="experience-icon">✈️</div>
+                    <h3>Private Aviation</h3>
+                    <p>Travel in ultimate comfort with our exclusive private jet and charter services.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🏨</div>
+                    <h3>5-Star Accommodations</h3>
+                    <p>Stay in the world's finest hotels, resorts, and exclusive private villas.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🍽️</div>
+                    <h3>Gourmet Dining</h3>
+                    <p>Savor Michelin-starred cuisine and unique culinary experiences worldwide.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🎭</div>
+                    <h3>VIP Access</h3>
+                    <p>Enjoy exclusive access to private events, galleries, and cultural experiences.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🚢</div>
+                    <h3>Yacht Charters</h3>
+                    <p>Explore coastlines and islands aboard luxury yachts with dedicated crews.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">👤</div>
+                    <h3>Personal Concierge</h3>
+                    <p>24/7 dedicated support to ensure every detail exceeds your expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Client Testimonials</h2>
+                <p class="section-subtitle">Stories from our satisfied travelers</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Luxe Voyages exceeded all expectations. Our Santorini experience was absolutely magical, from the private villa to the personalized wine tours. Every detail was perfect!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <h4>Sarah Mitchell</h4>
+                                <p>New York, USA</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The Maldives trip was a dream come true. The overwater villa, private chef, and snorkeling experiences were beyond incredible. Thank you for creating such unforgettable memories!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JD</div>
+                            <div class="author-info">
+                                <h4>James Davidson</h4>
+                                <p>London, UK</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Our Tokyo adventure was seamlessly planned. From the traditional ryokan stays to the exclusive sushi master class, every moment was perfectly curated. Outstanding service!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">EC</div>
+                            <div class="author-info">
+                                <h4>Emma Chen</h4>
+                                <p>Singapore</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" onclick="previousTestimonial()">‹</button>
+                    <button class="slider-btn" onclick="nextTestimonial()">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Begin Your Journey</h2>
+                    <p>Let our travel experts craft your perfect luxury escape. Contact us today to start planning your extraordinary adventure.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>travel@luxevoyages.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Park Avenue, New York, NY 10022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select id="destination" name="destination">
+                            <option value="">Select Destination</option>
+                            <option value="santorini">Santorini, Greece</option>
+                            <option value="maldives">Maldives</option>
+                            <option value="tokyo">Tokyo, Japan</option>
+                            <option value="amalfi">Amalfi Coast, Italy</option>
+                            <option value="bali">Bali, Indonesia</option>
+                            <option value="dubai">Dubai, UAE</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your dream vacation..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LUXE VOYAGES</h3>
+                    <p>Creating extraordinary travel experiences since 2020. Your journey to luxury begins here.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#experiences">Experiences</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Private Aviation</a></li>
+                        <li><a href="#">Luxury Hotels</a></li>
+                        <li><a href="#">Yacht Charters</a></li>
+                        <li><a href="#">Concierge Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and travel inspiration.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; YEAR Luxe Voyages. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="destinationModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeDestinationModal()">&times;</span>
+            <h2 id="modalTitle">Destination Details</h2>
+            <p id="modalDescription">Discover more about this amazing destination...</p>
+            <div class="modal-features">
+                <h3>What's Included:</h3>
+                <ul>
+                    <li>✓ Luxury accommodation</li>
+                    <li>✓ Private transfers</li>
+                    <li>✓ Curated experiences</li>
+                    <li>✓ Personal concierge</li>
+                    <li>✓ Gourmet dining</li>
+                </ul>
+            </div>
+            <button class="btn btn-primary" onclick="scrollToContact()">Book Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
